@@ -22,13 +22,13 @@ public class ImportacaoWebserviceApplication {
 			Empresa empresa = new Empresa();
 			empresa.setRazaoSocial("Kazale IT");
 			empresa.setCnpj("01564564564564");
-			
+
 			this.empresaRepository.save(empresa);
-			
+
 			Empresa empresa1 = new Empresa();
 			empresa1.setRazaoSocial("Nutit");
 			empresa1.setCnpj("13213215348545");
-			
+
 			this.empresaRepository.save(empresa1);
 		};
 	}

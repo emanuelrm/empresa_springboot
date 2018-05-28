@@ -21,6 +21,11 @@ public class Empresa implements Serializable {
 		
 	}
 
+	public Empresa(String cnpj, String razaoSocial) {
+		this.cnpj = cnpj;
+		this.razaoSocial = razaoSocial;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
