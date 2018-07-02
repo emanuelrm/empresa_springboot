@@ -1,5 +1,7 @@
 package br.com.tnd.api;
 
+import br.com.tnd.api.domain.Empresa;
+import br.com.tnd.api.repository.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +17,7 @@ public class ImportacaoWebserviceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ImportacaoWebserviceApplication.class, args);
 	}
-	
+
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {

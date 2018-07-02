@@ -1,4 +1,4 @@
-package br.com.tnd.api;
+package br.com.tnd.api.domain;
 
 import java.io.Serializable;
 import java.util.Date;
