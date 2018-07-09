@@ -2,6 +2,7 @@ package br.com.tnd.api.controller;
 
 import br.com.tnd.api.domain.Empresa;
 import br.com.tnd.api.domain.EmpresaDto;
+import br.com.tnd.api.domain.Fornecedor;
 import br.com.tnd.api.service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ public class EmpresaController {
         return empresaService.listarTodasEmpresas();
     }
 
-    @GetMapping(value="/listar")
+    @GetMapping(value="/listar/{razaoSocial}")
     public Empresa exemplo(@PathVariable("razaoSocial") String razaoSocial) {
         return empresaService.getEmpresaPorRazaoSocial(razaoSocial);
     }
@@ -39,5 +40,15 @@ public class EmpresaController {
     @DeleteMapping("/deletar/{id}")
     public void deletar(@PathVariable Long id) {
         empresaService.deletarEmpresa(id);
+    }
+
+    @GetMapping(value="/listarFornecedores/{razaoSocial}")
+    public ResponseEntity<List<Fornecedor>> listarFornecedores(@PathVariable("razaoSocial") String razaoSocial) {
+        return empresaService.getFornecedoresEmpresa(razaoSocial);
+    }
+
+    @GetMapping(value="/listarFornecedores")
+    public ResponseEntity<List<Fornecedor>> listarFornecedores() {
+        return empresaService.getFornecedores();
     }
 }

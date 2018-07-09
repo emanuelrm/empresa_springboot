@@ -1,7 +1,7 @@
 package br.com.tnd.api.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -16,7 +16,7 @@ public class Empresa implements Serializable {
 	private String cnpj;
 	private Date dataCriacao;
 	private Date dataAtualizacao;
-	
+
 	public Empresa() {
 		
 	}
@@ -67,6 +67,8 @@ public class Empresa implements Serializable {
 	public void setDataAtualizacao(Date dataAtualizacao) {
 		this.dataAtualizacao = dataAtualizacao;
 	}
+
+
 
 	@PrePersist
 	public void antesPersistir() {
